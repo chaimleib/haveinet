@@ -1,13 +1,12 @@
 haveinet 0.0.1
 ==============
-haveinet 0.0.1
-Usage: ./haveinet.sh [-q | -a ADDR | -v | -h]
+    Usage: ./haveinet.sh [-q | -a ADDR | -v | -h]
 
-Options:
-  -a      Test against this address (default: 8.8.8.8)
-  -q      Suppress output, return status code only
-  -v      Show version info
-  -h      Show this help
+    Options:
+      -a      Test against this address (default: 8.8.8.8)
+      -q      Suppress output, return status code only
+      -v      Show version info
+      -h      Show this help
 
 Tests the internet connection and exits successfully if a connection is present.
 Otherwise, exits with a non-zero status.

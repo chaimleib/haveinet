@@ -25,22 +25,11 @@ Examples:
 
 Install
 -------
-In a nutshell, download the sources and link them into a directory on your PATH:
-
-    cd /usr/local/lib
-    git clone https://github.com/chaimleib/haveinet.git
-    cd haveinet 
-    git checkout tags/0.0.2
-    cd ../../bin
-    ln -s ../lib/haveinet/haveinet.sh haveinet
+    make install
 
 Uninstall
 ---------
-Just remove the link and the resolve directory.
-
-    cd /usr/local
-    rm bin/haveinet
-    rm -rf lib/haveinet
+    make uninstall
 
 Features
 --------

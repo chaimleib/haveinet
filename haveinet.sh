@@ -45,15 +45,7 @@ while getopts ":qhva:" opt; do
             exit 1
             ;;
     esac
-    shift $((OPTIND-1))
 done
-
-if [[ "$#" != "0" ]]; then
-    echo "Invalid argument" >&2
-    echo >&2
-    showHelp >&2
-    exit 1
-fi
 
 [[ -n "$TEST_ADDR" ]] || TEST_ADDR=8.8.8.8
 

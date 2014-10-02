@@ -1,6 +1,6 @@
 haveinet 0.0.1
 ==============
-    Usage: ./haveinet.sh [-q | -a ADDR | -v | -h]
+    Usage: haveinet [-q | -a ADDR | -v | -h]
 
     Options:
       -a      Test against this address (default: 8.8.8.8)

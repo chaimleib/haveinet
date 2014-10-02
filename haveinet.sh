@@ -48,20 +48,21 @@ while getopts ":qhva:" opt; do
     shift $((OPTIND-1))
 done
 
-echo "${@}"
+if [[ "$#" != "0" ]]; then
+    echo "Invalid argument" >&2
+    echo >&2
+    showHelp >&2
+    exit 1
+fi
 
 [[ -n "$TEST_ADDR" ]] || TEST_ADDR=8.8.8.8
 
 ERRORS="$(ping -c5 -i0.1 -t1 -no "$TEST_ADDR" 2>&1 1>/dev/null)"
 RESULT="$?"
-echo "$ERRORS"
-echo
 ERRORS="$(echo "$ERRORS" | uniq)"
-echo "$ERRORS"
 
 [[ "$QUIET" == 'y' ]] && exit $RESULT
 
-        [[ -n "$ERRORS" ]] && echo "$ERRORS" >&2
 case "$RESULT" in
     0)
         echo "Connected to internet"

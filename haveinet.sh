@@ -3,6 +3,10 @@
 
 VERSION=0.0.1
 
+# For OSX
+# try 5x, 0.1sec intervals, timeout 1sec
+PING_CMD='ping -c5 -i0.1 -t1 -no "$TEST_ADDR" 2>&1 1>/dev/null'
+
 function showUsage() {
     echo "Usage: $0 [-q | -a ADDR | -v | -h]"
     echo
@@ -49,7 +53,7 @@ done
 
 [[ -n "$TEST_ADDR" ]] || TEST_ADDR=8.8.8.8
 
-ERRORS="$(ping -c5 -i0.1 -t1 -no "$TEST_ADDR" 2>&1 1>/dev/null)"
+ERRORS="$(eval $PING_CMD)"
 RESULT="$?"
 ERRORS="$(echo "$ERRORS" | uniq)"
 

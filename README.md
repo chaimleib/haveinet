@@ -32,7 +32,7 @@ Uninstall
 
 Features
 --------
-* Written to be cross-platform on Mac, Linux, and Cygwin.
+* Works on Mac OS X. (depends on ping, which doesn't have standard options)
 
 Changelog
 ---------

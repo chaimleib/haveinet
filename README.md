@@ -1,10 +1,11 @@
-haveinet 0.0.1
+haveinet 0.0.2
 ==============
-    Usage: haveinet [-q | -a ADDR | -v | -h]
+    Usage: haveinet [-q | -s | -a ADDR | -v | -h]
 
     Options:
       -a      Test against this address (default: 8.8.8.8)
-      -q      Suppress output, return status code only
+      -q      Suppress errors, stdout only
+      -s      Suppress errors and stdout, return status code only
       -v      Show version info
       -h      Show this help
 
@@ -13,13 +14,13 @@ Otherwise, exits with a non-zero status.
 
 Examples:
 
-    $ haveinet
+    $ haveinet -q
     Connected to internet
     
-    $ haveinet
+    $ haveinet -q
     Not connected to internet
 
-    $ haveinet -a google.com -q && echo connected
+    $ haveinet -s -a google.com && echo connected
     connected
 
 Install
@@ -37,3 +38,4 @@ Features
 Changelog
 ---------
 * 0.0.1 - initial release
+* 0.0.2 - added -s option for silent output, made -q suppress stderr. Reduced try count to 3.

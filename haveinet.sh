@@ -8,7 +8,7 @@ VERSION=0.0.2
 PING_CMD='ping -c3 -i0.1 -t1 -no "$TEST_ADDR" 2>&1 1>/dev/null'
 
 function showUsage() {
-    echo "Usage: $0 [-q | -a ADDR | -v | -h]"
+    echo "Usage: $0 [-a ADDR | -hqsv ]"
     echo
     echo "Options:"
     echo "  -a      Test against this address (default: 8.8.8.8)"

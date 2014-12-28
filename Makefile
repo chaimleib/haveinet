@@ -1,11 +1,12 @@
+SHELL=bash
 PREFIX=/usr/local
 
 all:
-	@echo Nothing to do.
+	@echo "Nothing to do."
 
-install: uninstall
+install:
 	[[ -d "$(PREFIX)/lib/haveinet" ]] || mkdir -p "$(PREFIX)/lib/haveinet"
-	cp -Rf ./* "$(PREFIX)/lib/haveinet/"
+	cp -Rf ./*.sh ./README.md ./LICENSE "$(PREFIX)/lib/haveinet/"
 	cd "$(PREFIX)/bin"
 	ln -s ../lib/haveinet/haveinet.sh "$(PREFIX)/bin/haveinet"
 

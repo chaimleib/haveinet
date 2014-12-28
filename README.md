@@ -1,4 +1,4 @@
-haveinet 0.0.2
+haveinet 0.0.3
 ==============
     Usage: haveinet [-q | -s | -a ADDR | -v | -h]
 
@@ -39,3 +39,4 @@ Changelog
 ---------
 * 0.0.1 - initial release
 * 0.0.2 - added -s option for silent output, made -q suppress stderr. Reduced try count to 3.
+* 0.0.3 - minor Makefile changes

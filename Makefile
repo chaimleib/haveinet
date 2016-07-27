@@ -1,7 +1,7 @@
 SHELL=bash
 PREFIX=/usr/local
 
-all:
+all: Makefile README.md haveinet.sh
 	[[ -x ./haveinet.sh ]] || chmod +x ./haveinet.sh
 
 install: all uninstall
@@ -15,3 +15,27 @@ uninstall:
 	rm -rf "$(PREFIX)/lib/haveinet"
 	rm -rf "$(PREFIX)/libexec/haveinet"
 	rm -f "$(PREFIX)/bin/haveinet"
+
+clean:
+	rm -rf autom4te.cache/
+	rm -f config.log
+	rm -f config.cache
+	rm -f config.status
+
+distclean: clean
+
+Makefile: Makefile.in config.status
+	./config.status $@
+
+README.md: README.md.in config.status
+	./config.status $@
+
+haveinet.sh: haveinet.sh.in config.status
+	./config.status $@
+
+config.status: configure
+	./configure
+
+configure: configure.ac
+	autoconf
+

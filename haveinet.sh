@@ -1,16 +1,12 @@
 #!/bin/bash
 
-VERSION=0.2.2
-
-# For OSX
-# try 5x, 0.1sec intervals, timeout 1sec
-PING_CMD='ping -c3 -i0.1 -t1 -no "$TEST_ADDR" 2>&1 1>/dev/null'
+VERSION=0.3.0
 
 function showUsage() {
-    echo "Usage: $0 [-a ADDR | -hqsv ]"
+    echo "Usage: haveinet [-a ADDR | -hqsv ]"
     echo
     echo "Options:"
-    echo "  -a      Test against this address (default: 8.8.8.8)"
+    echo "  -a ADDR Try to connect to hostname or IP address ADDR (default: 8.8.8.8)"
     echo "  -q      Suppress errors, stdout only"
     echo "  -s      Suppress errors and stdout, return status code only"
     echo "  -v      Show version info"
@@ -55,6 +51,10 @@ while getopts ":qshva:" opt; do
 done
 
 [[ -n "$TEST_ADDR" ]] || TEST_ADDR=8.8.8.8
+
+# For OSX
+# try 3x, 0.1sec intervals, timeout 1sec
+PING_CMD='ping -c3 -i0.1 -t1 -no "$TEST_ADDR" 2>&1 1>/dev/null'
 
 ERRORS="$(eval $PING_CMD 2>&1)"
 RESULT="$?"

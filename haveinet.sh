@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=0.2.1
+VERSION=0.2.2
 
 # For OSX
 # try 5x, 0.1sec intervals, timeout 1sec

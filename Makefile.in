@@ -4,7 +4,7 @@ PREFIX=@prefix@
 all:
 	[[ -x ./haveinet.sh ]] || chmod +x ./haveinet.sh
 
-install: uninstall
+install: all uninstall
 	[[ -d "$(PREFIX)/libexec/haveinet" ]] || mkdir -p "$(PREFIX)/libexec/haveinet"
 	[[ -d "$(PREFIX)/bin" ]] || mkdir -p "$(PREFIX)/bin"
 	cp -Rf ./*.sh ./README.md ./LICENSE "$(PREFIX)/libexec/haveinet/"

@@ -1,4 +1,4 @@
-AC_INIT(haveinet, 0.2.1)
+AC_INIT(haveinet, 0.2.2)
 AC_MSG_NOTICE(AC_PACKAGE_NAME AC_PACKAGE_VERSION)
 AC_PREFIX_DEFAULT([/usr/local])
 

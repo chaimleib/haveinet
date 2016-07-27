@@ -1,5 +1,5 @@
 SHELL=bash
-PREFIX=/usr/local
+PREFIX=@prefix@
 
 all:
 	@echo "Nothing to do."

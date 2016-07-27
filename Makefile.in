@@ -2,7 +2,7 @@ SHELL=bash
 PREFIX=@prefix@
 
 all:
-	@echo "Nothing to do."
+	[[ -x ./haveinet.sh ]] || chmod +x ./haveinet.sh
 
 install: uninstall
 	[[ -d "$(PREFIX)/libexec/haveinet" ]] || mkdir -p "$(PREFIX)/libexec/haveinet"

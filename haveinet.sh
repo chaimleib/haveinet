@@ -1,7 +1,6 @@
 #!/bin/bash
-# haveinet v0.0.2
 
-VERSION=0.0.2
+VERSION=0.1.0
 
 # For OSX
 # try 5x, 0.1sec intervals, timeout 1sec

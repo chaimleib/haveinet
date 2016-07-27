@@ -1,4 +1,4 @@
-haveinet 0.0.3
+haveinet 1.0.0
 ==============
     Usage: haveinet [-q | -s | -a ADDR | -v | -h]
 
@@ -40,3 +40,5 @@ Changelog
 * 0.0.1 - initial release
 * 0.0.2 - added -s option for silent output, made -q suppress stderr. Reduced try count to 3.
 * 0.0.3 - minor Makefile changes
+* 0.1.0 - Makefile installs to libexec instead of to lib; script version was out of sync. Created homebrew formula (tap: chaimleib/formulae).
+

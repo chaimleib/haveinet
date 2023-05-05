@@ -49,4 +49,5 @@ Changelog
 * 0.2.1: make the all target add execute permissions
 * 0.2.2: add the all target to install
 * 0.3.0: add ability to ./configure TESTADDR=hostname; Makefile detects changes to more files, README update, usage message no longer displays path to executable in example
+* 0.4.0: compatibility with the iputils version of ping, which takes ms for -W arg instead of s
 

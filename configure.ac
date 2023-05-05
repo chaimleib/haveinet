@@ -1,4 +1,4 @@
-AC_INIT(haveinet,0.3.0)
+AC_INIT(haveinet,0.4.0)
 AC_MSG_NOTICE(AC_PACKAGE_NAME AC_PACKAGE_VERSION)
 AC_ARG_VAR(TESTADDR,[The default hostname or IP that the test will try to reach (default: 8.8.8.8)])
 AC_PREFIX_DEFAULT([/usr/local])

@@ -52,9 +52,16 @@ done
 
 [[ -n "$TEST_ADDR" ]] || TEST_ADDR=@testaddr@
 
-# For OSX
-# try 3x, 0.1sec intervals, timeout 1sec
-PING_CMD='ping -c3 -i0.1 -t1 -no "$TEST_ADDR" 2>&1 1>/dev/null'
+if ping -V 2>/dev/null | grep -F iputils &>/dev/null; then
+  # For Linux
+  # try 3x, 0.1sec intervals, timeout 1000msec
+  PING_CMD='ping -c3 -i0.1 -W1000 "$TEST_ADDR" 2>&1 1>/dev/null'
+else
+  # For OSX
+  # try 3x, 0.1sec intervals, timeout 1sec
+  # -n
+  PING_CMD='ping -c3 -i0.1 -W1 "$TEST_ADDR" 2>&1 1>/dev/null'
+fi
 
 ERRORS="$(eval $PING_CMD 2>&1)"
 RESULT="$?"
